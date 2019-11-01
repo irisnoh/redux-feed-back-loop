@@ -6,11 +6,16 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, } from 'redux';
 
-
+const formReducer = (state =[], action)=>{
+    if(action.type==="GET_FEELING"){
+        return action.payload
+    }
+    return state
+}
 
 const storeInstance = createStore(
     combineReducers({
-  
+        formReducer,
     }),
     // applyMiddleware(logger),
 );

@@ -9,7 +9,9 @@ class Understanding extends Component {
     render() {
         return (
             <>
-                IN UNDERSTANDING COMPONENT
+                <h1>How well are you understanding the content?</h1>
+                <h3>Understanding?</h3>
+                <input></input>
                 <Link to="/Supported">
                     <button>NEXT</button>
                 </Link>
