@@ -5,9 +5,9 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
-import Feeling from '../Feeling/Feeling';
+// import Feeling from '../Feeling/Feeling';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
-
+import Admin from '../Admin/Admin'
 
 class App extends Component {
   render() {
@@ -21,11 +21,12 @@ class App extends Component {
           </header>
           <br />
           {/* home page is feeling */}
-          <Route path="/" exact component={Feeling} />
+          {/* <Route path="/" exact component={Feeling} /> */}
           <Route path="/Understanding" component={Understanding} />
           <Route path="/Supported" component={Supported} />
           <Route path="/Comments" component={Comments} />
           <Route path="/ReviewFeedback" component={ReviewFeedback} />
+          <Route path="/" component={Admin} />
 
 
           {/* <Feeling />
