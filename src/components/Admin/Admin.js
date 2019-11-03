@@ -20,7 +20,7 @@ class Admin extends Component {
     refreshFeedback = () => {
         axios({
             method:"GET",
-            url:"/results"
+            url:"/form"
         }).then(response => {
             console.log(response.data)
             this.props.dispatch({type:"GET_ADMIN",payload:response.data})

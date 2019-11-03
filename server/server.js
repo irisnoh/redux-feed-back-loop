@@ -9,8 +9,31 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
-const resultsRouter = require('./routes/results.router.js');
-app.use('/results', resultsRouter);
+ app.get('/form', (req, res) => {
+     console.log(req.body);
+    let queryText = `SELECT * FROM "feedback" ORDER BY "id" DESC`;
+ 
+     pool.query(queryText)
+         .then(result => {
+             res.send(result.rows);
+         }).catch(error => {
+             console.log(error);
+             res.sendStatus(500)
+         })
+ })
+ app.post('/submit', (req, res) => {
+    let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments", "flagged", "date") VALUES ($1, $2, $3, $4, $5, $6)`;
+ 
+     pool.query(queryText,[req.body.feeling,req.body.understanding,req.body.support,req.body.comments,false,req.body.date])
+         .then(result => {
+             res.sendStatus(200);
+         }).catch(error => {
+             console.log(error);
+             res.sendStatus(500)
+         })
+ })
+// const resultsRouter = require('./routes/results.router.js');
+// app.use('/results', resultsRouter);
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {

@@ -8,7 +8,7 @@ import { createStore, combineReducers, } from 'redux';
 
 const formReducer = (state = {}, action) => {
     if (action.type === "GET_FEELING") {
-        return {...state, feeling: action.payload}
+        return {...state,feeling:action.payload}
     } 
     // else if (action.type === "GET_UNDERSTANDING") {
     //     return action.payload

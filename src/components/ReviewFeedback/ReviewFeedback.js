@@ -9,7 +9,7 @@ class ReviewFeedback extends Component {
     handleSubmit = () => {
         axios({
             method:"POST",
-            url:"/results",
+            url:"/submit",
             data: {
                 ...this.props.formReducer,
             }
