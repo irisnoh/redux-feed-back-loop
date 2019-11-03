@@ -9,33 +9,23 @@ class Feeling extends Component {
     state = {
         results: ''
     }
-    getFeeling = () => {
-        axios({
-            method: 'GET',
-            url: '/feedback'
-        }).then(
-            response => {
-                this.props.dispatch({
-                    type: 'GET_FEELING',
-                    payload: response.data,
-                })
-                    .catch(error => {
-                        console.log('Error in GET', error);
-                    })
-            }
-        )
-    }
-
     // getFeeling = () => {
-    //     axios.get('/api/results')
-    //         .then((response) => {
-    //             console.log("GET got ", response.data);
-    //             this.props.dispatch({ type: "GET_FEELING", payload: response.data })
-    //         })
-    //         .catch((error) => {
-    //             console.log("GET error", error);
-    //         })
+    //     axios({
+    //         method: 'GET',
+    //         url: '/feedback'
+    //     }).then(
+    //         response => {
+    //             this.props.dispatch({
+    //                 type: 'GET_FEELING',
+    //                 payload: response.data,
+    //             })
+    //                 .catch(error => {
+    //                     console.log('Error in GET', error);
+    //                 })
+    //         }
+    //     )
     // }
+
     handleChangeFeeling = (event) => {
         this.setState({
             results: event.target.value,
@@ -66,10 +56,6 @@ class Feeling extends Component {
                     />
                     <input type="submit" value="Next" />
                 </form>
-
-                {this.props.formReducer.map(item =>
-                    item
-                )}
                 <pre>
                     {JSON.stringify(this.state, null, 2)}
                 </pre>

@@ -8,7 +8,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableBody from '@material-ui/core/TableBody';
 import Table from '@material-ui/core/Table';
-
+import AdminItem from '../AdminItem/AdminItem'
 
 class Admin extends Component {
    
@@ -54,7 +54,11 @@ class Admin extends Component {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {this.props.adminReducer.map(feedback => feedback)}
+                        {this.props.adminReducer.map(feedback => 
+                            <AdminItem    
+                            refreshFeedback={this.refreshFeedback}
+                            feedback={feedback}
+                            key={feedback.id} />)}
                     </TableBody>
                 </Table>
                 <pre>

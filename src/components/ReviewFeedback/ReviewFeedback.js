@@ -10,15 +10,18 @@ class ReviewFeedback extends Component {
     render() {
         return (
             <>
+            <div className="reviewPage">
+
                 <h1>Review Your Feedback!</h1>
-                <p>Feelings:</p>
-                <p>Understanding:</p>
-                <p>Supported:</p>
-                <p>Comments:</p>
+                <p>Feelings: {this.props.formReducer.feeling} </p>
+                <p>Understanding:{this.props.formReducer.understanding}</p>
+                <p>Supported:{this.props.formReducer.support}</p>
+                <p>Comments:{this.props.formReducer.comments}</p>
 
                 <Link to="/">
                     <button>SUBMIT</button>
                 </Link>
+                </div>
             </>
         );
     }
@@ -29,3 +32,4 @@ const mapReduxStateToProps = (reduxState) => {
 }
 
 export default connect(mapReduxStateToProps)(ReviewFeedback);
+
