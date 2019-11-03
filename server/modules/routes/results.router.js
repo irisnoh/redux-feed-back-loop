@@ -15,17 +15,17 @@ router.get('/', (req, res) => {
     });
 })
 
-// app.post('/form', (req, res) => {
-//     let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments", "flagged", "date") VALUES ($1, $2, $3, $4, $5, $6)`;
+app.post('/', (req, res) => {
+    let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments", "flagged", "date") VALUES ($1, $2, $3, $4, $5, $6)`;
  
-//      pool.query(queryText,[req.body.feeling,req.body.understanding,req.body.support,req.body.comments,false,req.body.date])
-//          .then(result => {
-//              res.sendStatus(200);
-//          }).catch(error => {
-//              console.log(error);
-//              res.sendStatus(500)
-//          })
-//  })
+     pool.query(queryText,[req.body.feeling,req.body.understanding,req.body.support,req.body.comments,false,req.body.date])
+         .then(result => {
+             res.sendStatus(200);
+         }).catch(error => {
+             console.log(error);
+             res.sendStatus(500)
+         })
+ })
  
 //  app.get('/form', (req, res) => {
 //      console.log(req.body);

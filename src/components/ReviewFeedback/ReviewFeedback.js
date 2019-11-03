@@ -1,11 +1,25 @@
 
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 
 class ReviewFeedback extends Component {
+    handleSubmit = () => {
+        axios({
+            method:"POST",
+            url:"/results",
+            data: {
+                ...this.props.formReducer,
+            }
+        }).then(response => {
+            console.log("post success")
+        }).catch(error => {
+            console.log(error);
+        })
+        this.props.history.push("/");
+    }
  
     render() {
         return (
@@ -19,7 +33,7 @@ class ReviewFeedback extends Component {
                 <p>Comments:{this.props.formReducer.comments}</p>
 
                 <Link to="/">
-                    <button>SUBMIT</button>
+                    <button onClick={this.handleSubmit}>SUBMIT</button>
                 </Link>
                 </div>
             </>

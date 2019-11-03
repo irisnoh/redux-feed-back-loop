@@ -9,6 +9,19 @@ class Feeling extends Component {
     state = {
         results: ''
     }
+    handleChangeFor = (propertyName) => (event) => {
+        this.props.dispatch({
+            type: 'GET_FEELING',
+            payload: { [propertyName]: event.target.value },
+        })
+    }
+    //function to clear all the input and start again
+    handleClearAll = () => {
+        this.props.dispatch({
+            type: 'CLEAR_FEEDBACK',
+        })
+    }
+
     // getFeeling = () => {
     //     axios({
     //         method: 'GET',
@@ -33,25 +46,24 @@ class Feeling extends Component {
     }
 
 
-    getFeeling = (event) => {
-        event.preventDefault();
-        this.props.dispatch({
-            type: "GET_FEELING", payload: this.state
-        })
-        this.setState({
-            results: ''
-        });
-    }
+    // getFeeling = (event) => {
+    //     event.preventDefault();
+    //     this.props.dispatch({
+    //         type: "GET_FEELING", payload: this.state
+    //     })
+    //     this.setState({
+    //         results: ''
+    //     });
+    // }
     render() {
         return (
             <>
                 <h1>How are you feeling today?</h1>
                 <h3>Feeling?</h3>
-
-                <form className="feedback-form" onSubmit={this.getFeeling}>
+                <form className="feedback-form" onSubmit={this.handleClearAll}>
                     <input placeholder="feelings"
-                        onChange={this.handleChangeFeeling}
-                        value={this.state.results}
+                        onChange={this.handleChangeFor('feeling')}
+                        value={this.props.formReducer}
                         type="text"
                     />
                     <input type="submit" value="Next" />

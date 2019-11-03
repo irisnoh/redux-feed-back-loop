@@ -25,7 +25,7 @@ class Admin extends Component {
             console.log(response.data)
             this.props.dispatch({type:"GET_ADMIN",payload:response.data})
         }).catch(error => {
-            console.log(error)
+            console.log('error in GET in Admin.js',error)
         })
     }
 
