@@ -74,6 +74,9 @@ class Feeling extends Component {
                             <MenuItem value={5}>5</MenuItem>
                         </Select>
                     </FormControl>
+                    <Link to="/Understanding">
+                    <button>Next</button>
+                </Link>
                 {/* <h3>Feeling?</h3>
                 <form className="feedback-form" onSubmit={this.handleClearAll}>
                     <input placeholder="feelings"
@@ -83,6 +86,7 @@ class Feeling extends Component {
                     />
                     <input type="submit" value="Next" />
                 </form> */}
+
                 <pre>
                     {JSON.stringify(this.props.formReducer, null, 2)}
                 </pre>

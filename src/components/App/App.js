@@ -29,7 +29,7 @@ class App extends Component {
           <Route path="/" component={Admin} />
 
 
-          <Feeling />
+        <Feeling />
         <Understanding />
         <Supported />
         <Comments />

@@ -23,7 +23,7 @@ class Comments extends Component {
             <>
                 <h1>Any comments you want to leave?</h1>
                 <h3>Comments</h3>
-                <TextField onChange={this.handleChangeFor('comment')}>
+                <TextField onChange={this.handleChangeFor('comments')}>
 
                 </TextField>
                 <Link to="/ReviewFeedback">

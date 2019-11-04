@@ -44,6 +44,9 @@ class Understanding extends Component {
                 <Link to="/Supported">
                     <button>NEXT</button>
                 </Link>
+                <pre>
+                    {JSON.stringify(this.props.formReducer, null, 2)}
+                </pre>
             </>
         );
     }

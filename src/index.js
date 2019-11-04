@@ -17,7 +17,9 @@ const formReducer = (state = {}, action) => {
         return {...state,...action.payload}
     } else if (action.type === 'GET_COMMENTS') {
         return {...state,...action.payload}
-    } 
+    } else if (action.type === 'CLEAR_FEEDBACK') {
+        return {}
+    }
     return state
 }
 
@@ -27,6 +29,7 @@ const adminReducer = (state = [], action) => {
     }
     return state
 }
+
 const storeInstance = createStore(
     combineReducers({
         formReducer,

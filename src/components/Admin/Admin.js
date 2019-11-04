@@ -61,6 +61,9 @@ class Admin extends Component {
                             key={feedback.id} />)}
                     </TableBody>
                 </Table>
+                <Link to="/Feeling">
+                    <button onClick={this.handleClearAll}>NEXT</button>
+                </Link>
                 <pre>
                     {JSON.stringify(this.props.adminReducer, null, 2)}
                 </pre>

@@ -15,10 +15,11 @@ class ReviewFeedback extends Component {
             }
         }).then(response => {
             console.log("post success")
+            this.props.dispatch({type:"GET_ADMIN", payload:response.data})
         }).catch(error => {
             console.log(error);
         })
-        this.props.history.push("/");
+        // this.props.history.push("/");
     }
  
     render() {
