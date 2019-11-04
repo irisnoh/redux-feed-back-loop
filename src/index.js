@@ -7,17 +7,17 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { logger } from 'redux-logger'
 
-const formReducer = (state = [], action) => {
+const formReducer = (state = {}, action) => {
     if (action.type === "GET_FEELING") {
-        return [...state,...action.payload]
+        return {...state,...action.payload}
     } 
-    // else if (action.type === "GET_UNDERSTANDING") {
-    //     return action.payload
-    // } else if (action.type === 'GET_SUPPORT') {
-    //     return action.payload
-    // } else if (action.type === 'GET_COMMENTS') {
-    //     return action.payload
-    // } 
+    else if (action.type === "GET_UNDERSTANDING") {
+        return {...state,...action.payload}
+    } else if (action.type === 'GET_SUPPORT') {
+        return {...state,...action.payload}
+    } else if (action.type === 'GET_COMMENTS') {
+        return {...state,...action.payload}
+    } 
     return state
 }
 

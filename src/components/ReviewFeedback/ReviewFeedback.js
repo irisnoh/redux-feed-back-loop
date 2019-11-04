@@ -22,15 +22,15 @@ class ReviewFeedback extends Component {
     }
  
     render() {
-        return (
+        return (    
             <>
             <div className="reviewPage">
 
                 <h1>Review Your Feedback!</h1>
                 <p key={this.props.formReducer.id}>Feelings: {this.props.formReducer.feeling} </p>
-                <p key={this.props.formReducer.id}>Understanding:{this.props.formReducer.understanding}</p>
-                <p key={this.props.formReducer.id}>Supported:{this.props.formReducer.support}</p>
-                <p key={this.props.formReducer.id}>Comments:{this.props.formReducer.comments}</p>
+                <p key={this.props.formReducer.id}>Understanding: {this.props.formReducer.understanding}</p>
+                <p key={this.props.formReducer.id}>Supported: {this.props.formReducer.support}</p>
+                <p key={this.props.formReducer.id}>Comments: {this.props.formReducer.comments}</p>
 
                 <Link to="/">
                     <button onClick={this.handleSubmit}>SUBMIT</button>

@@ -39,11 +39,11 @@ class Feeling extends Component {
     //     )
     // }
 
-    handleChangeFeeling = (event) => {
-        this.setState({
-            results: event.target.value,
-        });
-    }
+    // handleChangeFeeling = (event) => {
+    //     this.setState({
+    //         results: event.target.value,
+    //     });
+    // }
 
 
     // getFeeling = (event) => {
