@@ -23,7 +23,7 @@ class Admin extends Component {
             url:"/form"
         }).then(response => {
             console.log(response.data)
-            this.props.dispatch({type:"GET_ADMIN",payload:response.data})
+            this.props.dispatch({type:"GET_FEELING",payload:response.data})
         }).catch(error => {
             console.log('error in GET in Admin.js',error)
         })
@@ -54,7 +54,7 @@ class Admin extends Component {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {this.props.adminReducer.map(feedback => 
+                        {this.props.formReducer.map(feedback => 
                             <AdminItem    
                             refreshFeedback={this.refreshFeedback}
                             feedback={feedback}
@@ -62,7 +62,7 @@ class Admin extends Component {
                     </TableBody>
                 </Table>
                 <pre>
-                    {JSON.stringify(this.props.adminReducer, null, 2)}
+                    {JSON.stringify(this.props.formReducer, null, 2)}
                 </pre>
 
             </>

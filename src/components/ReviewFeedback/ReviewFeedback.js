@@ -27,10 +27,10 @@ class ReviewFeedback extends Component {
             <div className="reviewPage">
 
                 <h1>Review Your Feedback!</h1>
-                <p>Feelings: {this.props.formReducer.feeling} </p>
-                <p>Understanding:{this.props.formReducer.understanding}</p>
-                <p>Supported:{this.props.formReducer.support}</p>
-                <p>Comments:{this.props.formReducer.comments}</p>
+                <p key={this.props.formReducer.id}>Feelings: {this.props.formReducer.feeling} </p>
+                <p key={this.props.formReducer.id}>Understanding:{this.props.formReducer.understanding}</p>
+                <p key={this.props.formReducer.id}>Supported:{this.props.formReducer.support}</p>
+                <p key={this.props.formReducer.id}>Comments:{this.props.formReducer.comments}</p>
 
                 <Link to="/">
                     <button onClick={this.handleSubmit}>SUBMIT</button>

@@ -8,9 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 class Feeling extends Component {
-    state = {
-        results: ''
-    }
+ 
     handleChangeFor = (propertyName) => (event) => {
         this.props.dispatch({
             type: 'GET_FEELING',
@@ -65,7 +63,7 @@ class Feeling extends Component {
                         <InputLabel htmlFor="feeling">Feeling</InputLabel>
                         {/* drop down list in scale 1-5 */}
                         <Select
-                            value={this.props.formReducer.feeling}
+                            value={this.props.formReducer}
                             onChange={this.handleChangeFor('feeling')}
                         >
                             <MenuItem value=""><em></em></MenuItem>
@@ -86,7 +84,7 @@ class Feeling extends Component {
                     <input type="submit" value="Next" />
                 </form> */}
                 <pre>
-                    {JSON.stringify(this.state, null, 2)}
+                    {JSON.stringify(this.props.formReducer, null, 2)}
                 </pre>
 
             </>

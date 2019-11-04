@@ -4,11 +4,12 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers, } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { logger } from 'redux-logger'
 
-const formReducer = (state = {}, action) => {
+const formReducer = (state = [], action) => {
     if (action.type === "GET_FEELING") {
-        return {...state,feeling:action.payload}
+        return [...state,...action.payload]
     } 
     // else if (action.type === "GET_UNDERSTANDING") {
     //     return action.payload
@@ -31,7 +32,7 @@ const storeInstance = createStore(
         formReducer,
         adminReducer
     }),
-    // applyMiddleware(logger),
+    applyMiddleware(logger),
 );
 
 

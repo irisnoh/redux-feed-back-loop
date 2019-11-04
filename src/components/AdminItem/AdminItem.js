@@ -11,12 +11,12 @@ class AdminItem extends Component {
     render() {
         return (
             <>
-               <TableRow>
-                <TableCell>{this.props.feedback.feeling}</TableCell>
-                <TableCell>{this.props.feedback.understanding}</TableCell>
-                <TableCell>{this.props.feedback.support}</TableCell>
-                <TableCell>{this.props.feedback.comments}</TableCell>
-                <TableCell>
+               <TableRow key={this.props.feedback.id}>
+                <TableCell key={this.props.feedback.id} >{this.props.feedback.feeling}</TableCell>
+                <TableCell key={this.props.feedback.id}>{this.props.feedback.understanding}</TableCell>
+                <TableCell key={this.props.feedback.id}>{this.props.feedback.support}</TableCell>
+                <TableCell key={this.props.feedback.id}>{this.props.feedback.comments}</TableCell>
+                <TableCell key={this.props.feedback.id}>
                    
                   <button>  Delete</button>
                     </TableCell>
