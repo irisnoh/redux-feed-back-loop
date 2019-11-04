@@ -30,9 +30,9 @@ class App extends Component {
 
 
           <Feeling />
-        {/* <Understanding /> */}
+        <Understanding />
         <Supported />
-        {/* <Comments /> */}
+        <Comments />
         <ReviewFeedback />
         </div>
       </Router>
