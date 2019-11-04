@@ -29,6 +29,9 @@ class Comments extends Component {
                 <Link to="/ReviewFeedback">
                     <button>Submit</button>
                 </Link>
+                <pre>
+                    {JSON.stringify(this.props.formReducer, null, 2)}
+                </pre>
             </>
         );
     }

@@ -9,6 +9,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 class Understanding extends Component {
+
     handleChangeFor = (propertyName) => (event) => {
         this.props.dispatch({
             type: 'GET_FEELING',
@@ -27,26 +28,26 @@ class Understanding extends Component {
                 <h1>How well are you understanding the content?</h1>
                 <h3>Understanding?</h3>
                 <FormControl>
-                        <InputLabel htmlFor="understanding">Understanding</InputLabel>
-                        {/* drop down list in scale 1-5 */}
-                        <Select
-                            value={this.props.formReducer}
-                            onChange={this.handleChangeFor('understanding')}
-                        >
-                            <MenuItem value=""><em></em></MenuItem>
-                            <MenuItem value={1}>1</MenuItem>
-                            <MenuItem value={2}>2</MenuItem>
-                            <MenuItem value={3}>3</MenuItem>
-                            <MenuItem value={4}>4</MenuItem>
-                            <MenuItem value={5}>5</MenuItem>
-                        </Select>
-                    </FormControl>
-                <Link to="/Supported">
-                    <button>NEXT</button>
+                    <InputLabel htmlFor="understanding">Understanding</InputLabel>
+                                            {/* drop down list in scale 1-5 */}
+
+                    <Select
+                        onChange={this.handleChangeFor('understanding')}
+                    >
+                        <MenuItem ><em></em></MenuItem>
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                        <MenuItem value={3}>3</MenuItem>
+                        <MenuItem value={4}>4</MenuItem>
+                        <MenuItem value={5}>5</MenuItem>
+                    </Select>
+                    <Link to="/Supported">
+                    <button>Next</button>
                 </Link>
-                <pre>
-                    {JSON.stringify(this.props.formReducer, null, 2)}
-                </pre>
+                </FormControl>
+                
+               
+            
             </>
         );
     }

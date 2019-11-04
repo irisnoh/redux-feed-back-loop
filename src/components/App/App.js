@@ -8,7 +8,7 @@ import Comments from '../Comments/Comments';
 import Feeling from '../Feeling/Feeling';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 import Admin from '../Admin/Admin'
-
+import ThankYou from '../ThankYou/ThankYou'
 class App extends Component {
   render() {
     return (
@@ -20,20 +20,21 @@ class App extends Component {
             <h4><i>Don't forget it!</i></h4>
           </header>
           <br />
-          {/* home page is feeling */}
+          {/* home page is showing all feedback */}
           <Route path="/Feeling" component={Feeling} />
           <Route path="/Understanding" component={Understanding} />
           <Route path="/Supported" component={Supported} />
           <Route path="/Comments" component={Comments} />
           <Route path="/ReviewFeedback" component={ReviewFeedback} />
-          <Route path="/" component={Admin} />
+          <Route path="/" exact component={Admin} />
+          <Route path="/ThankYou" component={ThankYou} />
 
 
-        <Feeling />
+        {/* <Feeling />
         <Understanding />
         <Supported />
         <Comments />
-        <ReviewFeedback />
+        <ReviewFeedback />  */}
         </div>
       </Router>
     );

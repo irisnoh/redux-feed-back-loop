@@ -7,76 +7,64 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+
+
 class Feeling extends Component {
- 
+    
+
+    // state = {
+    //     input: ''
+    // }
+
     handleChangeFor = (propertyName) => (event) => {
-        this.props.dispatch({
+        // if (this.state.empty === '')
+        // {alert('opps no good')}
+        // else if (this.state)
+            // return console.log('cannot be nothing')
+            this.props.dispatch({
             type: 'GET_FEELING',
             payload: { [propertyName]: event.target.value },
         })
+
     }
+// function to alert if not value was selected
+    // handleClickNothing = () => {
+    //     if (this.state.empty === '') {
+    //         alert("Oops, values can not be empty!"
+    //         )
+    //     }
+    // }
     //function to clear all the input and start again
     handleClearAll = () => {
         this.props.dispatch({
             type: 'CLEAR_FEEDBACK',
         })
     }
+  
 
-    // getFeeling = () => {
-    //     axios({
-    //         method: 'GET',
-    //         url: '/feedback'
-    //     }).then(
-    //         response => {
-    //             this.props.dispatch({
-    //                 type: 'GET_FEELING',
-    //                 payload: response.data,
-    //             })
-    //                 .catch(error => {
-    //                     console.log('Error in GET', error);
-    //                 })
-    //         }
-    //     )
-    // }
-
-    // handleChangeFeeling = (event) => {
-    //     this.setState({
-    //         results: event.target.value,
-    //     });
-    // }
-
-
-    // getFeeling = (event) => {
-    //     event.preventDefault();
-    //     this.props.dispatch({
-    //         type: "GET_FEELING", payload: this.state
-    //     })
-    //     this.setState({
-    //         results: ''
-    //     });
-    // }
     render() {
         return (
             <>
-                <h2>How are you feeling today?</h2>
-                    <FormControl>
-                        <InputLabel htmlFor="feeling">Feeling</InputLabel>
-                        {/* drop down list in scale 1-5 */}
-                        <Select
-                            value={this.props.formReducer}
-                            onChange={this.handleChangeFor('feeling')}
-                        >
-                            <MenuItem value=""><em></em></MenuItem>
-                            <MenuItem value={1}>1</MenuItem>
-                            <MenuItem value={2}>2</MenuItem>
-                            <MenuItem value={3}>3</MenuItem>
-                            <MenuItem value={4}>4</MenuItem>
-                            <MenuItem value={5}>5</MenuItem>
-                        </Select>
-                    </FormControl>
+                <h1>How are you feeling today?</h1>
+                <h3>Feeling?</h3>
+                <FormControl>
+                    <InputLabel htmlFor="feeling">Feeling</InputLabel>
+                    {/* drop down list in scale 1-5 */}
+                    <Select
+                        onChange={this.handleChangeFor('feeling')}
+                    >
+                        <MenuItem ><em></em></MenuItem>
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                        <MenuItem value={3}>3</MenuItem>
+                        <MenuItem value={4}>4</MenuItem>
+                        <MenuItem value={5}>5</MenuItem>
+                    </Select>
                     <Link to="/Understanding">
                     <button>Next</button>
                 </Link>
+                </FormControl>
+               
                 {/* <h3>Feeling?</h3>
                 <form className="feedback-form" onSubmit={this.handleClearAll}>
                     <input placeholder="feelings"
@@ -87,9 +75,7 @@ class Feeling extends Component {
                     <input type="submit" value="Next" />
                 </form> */}
 
-                <pre>
-                    {JSON.stringify(this.props.formReducer, null, 2)}
-                </pre>
+               
 
             </>
         );

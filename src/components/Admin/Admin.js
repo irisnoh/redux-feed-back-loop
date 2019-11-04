@@ -33,6 +33,7 @@ class Admin extends Component {
     render() {
         return (
             <>
+            <h1>FeedBack Table</h1>
                 <Table>
                     <TableHead>
                         <TableRow>
@@ -62,11 +63,11 @@ class Admin extends Component {
                     </TableBody>
                 </Table>
                 <Link to="/Feeling">
-                    <button onClick={this.handleClearAll}>NEXT</button>
+                    <button onClick={this.handleClearAll}>New FeedBack</button>
                 </Link>
-                <pre>
+                {/* <pre>
                     {JSON.stringify(this.props.adminReducer, null, 2)}
-                </pre>
+                </pre> */}
 
             </>
         );

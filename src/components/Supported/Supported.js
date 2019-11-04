@@ -28,26 +28,26 @@ class Supported extends Component {
                 <h1>How well are you being supported?</h1>
                 <h3>Support?</h3>
                 <FormControl>
-                        <InputLabel htmlFor="support">Support</InputLabel>
-                        {/* drop down list in scale 1-5 */}
-                        <Select
-                            value={this.props.formReducer}
-                            onChange={this.handleChangeFor('support')}
-                        >
-                            <MenuItem value=""><em></em></MenuItem>
-                            <MenuItem value={1}>1</MenuItem>
-                            <MenuItem value={2}>2</MenuItem>
-                            <MenuItem value={3}>3</MenuItem>
-                            <MenuItem value={4}>4</MenuItem>
-                            <MenuItem value={5}>5</MenuItem>
-                        </Select>
-                    </FormControl>
-                <Link to="/Comments">
-                    <button>NEXT</button>
-                </Link>
-                <pre>
+                    <InputLabel htmlFor="support">Support</InputLabel>
+                    {/* drop down list in scale 1-5 */}
+
+                    <Select
+                        onChange={this.handleChangeFor('support')} >
+                        <MenuItem ><em></em></MenuItem>
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                        <MenuItem value={3}>3</MenuItem>
+                        <MenuItem value={4}>4</MenuItem>
+                        <MenuItem value={5}>5</MenuItem>
+                    </Select>
+                    <Link to="/Comments">
+                        <button>Next</button>
+                    </Link>
+                </FormControl>
+
+                {/* <pre>
                     {JSON.stringify(this.props.formReducer, null, 2)}
-                </pre>
+                </pre> */}
             </>
         );
     }

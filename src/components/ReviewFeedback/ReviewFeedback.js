@@ -33,10 +33,13 @@ class ReviewFeedback extends Component {
                 <p key={this.props.formReducer.id}>Supported: {this.props.formReducer.support}</p>
                 <p key={this.props.formReducer.id}>Comments: {this.props.formReducer.comments}</p>
 
-                <Link to="/">
+                <Link to="/ThankYou">
                     <button onClick={this.handleSubmit}>SUBMIT</button>
                 </Link>
                 </div>
+                {/* <pre>
+                    {JSON.stringify(this.props.formReducer, null, 2)}
+                </pre> */}
             </>
         );
     }
