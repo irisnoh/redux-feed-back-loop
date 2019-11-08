@@ -18,6 +18,7 @@ class App extends Component {
           <header className="App-header">
             <h1 className="App-title">Feedback!</h1>
             <h4><i>Don't forget it!</i></h4>
+            <button>Home</button>
           </header>
           <br />
           {/* home page is showing all feedback */}

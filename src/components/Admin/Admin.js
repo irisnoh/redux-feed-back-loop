@@ -9,6 +9,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableBody from '@material-ui/core/TableBody';
 import Table from '@material-ui/core/Table';
 import AdminItem from '../AdminItem/AdminItem'
+import './Admin.css';
+
 
 class Admin extends Component {
    
@@ -33,7 +35,7 @@ class Admin extends Component {
     render() {
         return (
             <>
-            <h1>FeedBack Table</h1>
+            <h1 className="tableHeader">FeedBack Table</h1>
                 <Table>
                     <TableHead>
                         <TableRow>
@@ -50,7 +52,7 @@ class Admin extends Component {
                                 Comments
                            </TableCell>
                             <TableCell>
-                                delete
+                                Delete
                            </TableCell>
                         </TableRow>
                     </TableHead>
