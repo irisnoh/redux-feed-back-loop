@@ -17,8 +17,6 @@ class Admin extends Component {
     componentDidMount= () => {
         this.refreshFeedback();
     }
-
-
     refreshFeedback = () => {
         axios({
             method:"GET",

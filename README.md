@@ -1,9 +1,11 @@
-# Project Name
+# Redux-Feedback-Loop
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This project creates a feedback loop of: Feeling, Understanding, Supported and Comments. Users can submit there feedback and with show up on the feedback table. 
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/github-finalization-assignment).
+This project uses: React.js, React-Redux, Express.js and postGresSQL. 
+
+# SQL - TO - DO - LIST
+![Feedback-loop interface](Feedback.png)
