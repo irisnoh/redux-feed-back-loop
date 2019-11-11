@@ -2,15 +2,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableBody from '@material-ui/core/TableBody';
 import Table from '@material-ui/core/Table';
 import AdminItem from '../AdminItem/AdminItem'
+import Button from '@material-ui/core/Button';
 import './Admin.css';
-
+import CreateIcon from '@material-ui/icons/Create';
 
 class Admin extends Component {
    
@@ -31,11 +31,13 @@ class Admin extends Component {
         })
     }
 
-
+    handleNextButton = () => {
+        this.props.history.push('/Feeling')
+    }
     render() {
         return (
             <>
-            <h1 className="tableHeader">FeedBack Table</h1>
+            <h1 className="tableHeader">Feedback Table</h1>
                 <Table>
                     <TableHead>
                         <TableRow>
@@ -43,7 +45,7 @@ class Admin extends Component {
                                 Feeling
                            </TableCell>
                             <TableCell>
-                                Comprehension
+                                Understanding
                            </TableCell>
                             <TableCell>
                                 Support
@@ -64,9 +66,7 @@ class Admin extends Component {
                             key={feedback.id} />)}
                     </TableBody>
                 </Table>
-                <Link to="/Feeling">
-                    <button onClick={this.handleClearAll}>New FeedBack</button>
-                </Link>
+                    <CreateIcon onClick={this.handleNextButton}>New FeedBack</CreateIcon>
                 {/* <pre>
                     {JSON.stringify(this.props.adminReducer, null, 2)}
                 </pre> */}

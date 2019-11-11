@@ -9,16 +9,21 @@ import Feeling from '../Feeling/Feeling';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 import Admin from '../Admin/Admin'
 import ThankYou from '../ThankYou/ThankYou'
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+import { Link } from 'react-router-dom'
+
 class App extends Component {
+
   render() {
     return (
       <Router>
 
         <div className="App">
           <header className="App-header">
-            <h1 className="App-title">Feedback!</h1>
-            <h4><i>Don't forget it!</i></h4>
-            <button>Home</button>
+            <h1 className="App-title">Feedback</h1>
+            <h4><i>How are you feeling today?</i></h4>
+            <Link to="/" > <HomeOutlinedIcon color="action" /></Link>
+      
           </header>
           <br />
           {/* home page is showing all feedback */}

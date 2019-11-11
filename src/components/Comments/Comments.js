@@ -1,8 +1,7 @@
 
 import React, { Component } from 'react';
-// import axios from 'axios';
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import AddSharpIcon from '@material-ui/icons/AddSharp';
 
 import { TextField } from '@material-ui/core';
 class Comments extends Component {
@@ -12,26 +11,24 @@ class Comments extends Component {
             payload: { [propertyName]: event.target.value },
         })
     }
-    //function to clear all the input and start again
-    handleClearAll = () => {
-        this.props.dispatch({
-            type: 'CLEAR_FEEDBACK',
-        })
+
+    handleNextButton = () => {
+        this.props.history.push('/ReviewFeedback')
     }
     render() {
         return (
             <>
                 <h1>Any comments you want to leave?</h1>
-                <h3>Comments</h3>
                 <TextField onChange={this.handleChangeFor('comments')}>
 
                 </TextField>
-                <Link to="/ReviewFeedback">
-                    <button>Submit</button>
-                </Link>
-                <pre>
-                    {JSON.stringify(this.props.formReducer, null, 2)}
-                </pre>
+                    <AddSharpIcon onClick={this.handleNextButton}>Submit</AddSharpIcon>
+                    <h1>Feedback:</h1>
+                <p key={this.props.formReducer.id}>Feelings: {this.props.formReducer.feeling} </p>
+                <p key={this.props.formReducer.id}>Understanding: {this.props.formReducer.understanding}</p>
+                <p key={this.props.formReducer.id}>Supported: {this.props.formReducer.support}</p>
+                <p key={this.props.formReducer.id}>Comments: {this.props.formReducer.comments}</p>
+
             </>
         );
     }

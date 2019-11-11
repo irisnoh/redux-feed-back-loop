@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import AddSharpIcon from '@material-ui/icons/AddSharp';
 
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -17,16 +17,13 @@ class Understanding extends Component {
         })
     }
     //function to clear all the input and start again
-    handleClearAll = () => {
-        this.props.dispatch({
-            type: 'CLEAR_FEEDBACK',
-        })
+    handleNextButton = () => {
+        this.props.history.push('/Supported')
     }
     render() {
         return (
             <>
                 <h1>How well are you understanding the content?</h1>
-                <h3>Understanding?</h3>
                 <FormControl>
                     <InputLabel htmlFor="understanding">Understanding</InputLabel>
                                             {/* drop down list in scale 1-5 */}
@@ -41,12 +38,14 @@ class Understanding extends Component {
                         <MenuItem value={4}>4</MenuItem>
                         <MenuItem value={5}>5</MenuItem>
                     </Select>
-                    <Link to="/Supported">
-                    <button>Next</button>
-                </Link>
+                    <AddSharpIcon onClick={this.handleNextButton}>Next</AddSharpIcon>
                 </FormControl>
                 
-               
+                <h1>Feedback:</h1>
+                <p key={this.props.formReducer.id}>Feelings: {this.props.formReducer.feeling} </p>
+                <p key={this.props.formReducer.id}>Understanding: {this.props.formReducer.understanding}</p>
+                <p key={this.props.formReducer.id}>Supported: {this.props.formReducer.support}</p>
+                <p key={this.props.formReducer.id}>Comments: {this.props.formReducer.comments}</p>
             
             </>
         );

@@ -7,8 +7,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-
-
+import AddSharpIcon from '@material-ui/icons/AddSharp';
 class Feeling extends Component {
 
 
@@ -41,16 +40,14 @@ class Feeling extends Component {
         })
     }
 
-    handleNextPage =()=>{
-        // link and alert functon
+    handleNextButton = () => {
+        this.props.history.push('/Understanding')
     }
 
-    //look into min and max values
     render() {
         return (
             <>
                 <h1>How are you feeling today?</h1>
-                <h3>Feeling?</h3>
                 <FormControl>
                     <InputLabel htmlFor="feeling">Feeling</InputLabel>
                     {/* drop down list in scale 1-5 */}
@@ -64,22 +61,14 @@ class Feeling extends Component {
                         <MenuItem value={4}>4</MenuItem>
                         <MenuItem value={5}>5</MenuItem>
                     </Select>
-                    <Link to="/Understanding">
-                        <button>Next</button>
-                    </Link>
+                        <AddSharpIcon onClick={this.handleNextButton}>Next</AddSharpIcon>
+                    
                 </FormControl>
-
-                {/* <h3>Feeling?</h3>
-                <form className="feedback-form" onSubmit={this.handleClearAll}>
-                    <input placeholder="feelings"
-                        onChange={this.handleChangeFor('feeling')}
-                        value={this.props.formReducer}
-                        type="text"
-                    />
-                    <input type="submit" value="Next" />
-                </form> */}
-
-
+                <h1>Feedback:</h1>
+                <p key={this.props.formReducer.id}>Feelings: {this.props.formReducer.feeling} </p>
+                <p key={this.props.formReducer.id}>Understanding: {this.props.formReducer.understanding}</p>
+                <p key={this.props.formReducer.id}>Supported: {this.props.formReducer.support}</p>
+                <p key={this.props.formReducer.id}>Comments: {this.props.formReducer.comments}</p>
 
             </>
         );

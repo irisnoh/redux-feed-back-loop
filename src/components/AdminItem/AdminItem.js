@@ -1,8 +1,7 @@
 
 import React, { Component } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import DeleteIcon from '@material-ui/icons/Delete';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 
@@ -18,7 +17,7 @@ class AdminItem extends Component {
                 <TableCell key={this.props.feedback.id}>{this.props.feedback.comments}</TableCell>
                 <TableCell key={this.props.feedback.id}>
                    
-                  <button>  Delete</button>
+                  <DeleteIcon>  Delete</DeleteIcon>
                     </TableCell>
             </TableRow>
             </>

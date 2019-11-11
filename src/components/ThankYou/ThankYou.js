@@ -1,9 +1,13 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+
 
 class ThankYou extends Component {
+    handleNextButton = () => {
+        this.props.history.push('/')
+    }
     
     render() {
         return (
@@ -12,9 +16,8 @@ class ThankYou extends Component {
                 
                 <h3>Thank You!</h3>
 
-                    <Link to="/">
-                    <button>Home</button>
-                </Link>
+                    <HomeOutlinedIcon onClick={this.handleNextButton}>Home</HomeOutlinedIcon>
+                
              
                
             

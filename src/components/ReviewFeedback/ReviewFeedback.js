@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import AddSharpIcon from '@material-ui/icons/AddSharp';
 
 
 class ReviewFeedback extends Component {
@@ -10,16 +10,14 @@ class ReviewFeedback extends Component {
         axios({
             method:"POST",
             url:"/submit",
-            data: {
-                ...this.props.formReducer,
-            }
+            data: this.props.formReducer
         }).then(response => {
             console.log("post success")
             this.props.dispatch({type:"GET_ADMIN", payload:response.data})
         }).catch(error => {
             console.log(error);
         })
-        // this.props.history.push("/");
+        this.props.history.push("/ThankYou");
     }
  
     render() {
@@ -33,9 +31,7 @@ class ReviewFeedback extends Component {
                 <p key={this.props.formReducer.id}>Supported: {this.props.formReducer.support}</p>
                 <p key={this.props.formReducer.id}>Comments: {this.props.formReducer.comments}</p>
 
-                <Link to="/ThankYou">
-                    <button onClick={this.handleSubmit}>SUBMIT</button>
-                </Link>
+                    <AddSharpIcon onClick={this.handleSubmit}>SUBMIT</AddSharpIcon>
                 </div>
                 {/* <pre>
                     {JSON.stringify(this.props.formReducer, null, 2)}
