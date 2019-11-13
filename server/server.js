@@ -33,6 +33,21 @@ app.use(express.static('build'));
              res.sendStatus(500)
          })
  })
+
+ app.delete('/form/:id', (req, res) => {
+    const idToDelete = req.params.id;
+    pool.query(`
+        DELETE FROM "feedback" WHERE "id"=$1
+    `, [idToDelete]).then(
+        () => {
+            res.sendStatus(200);
+        }
+    ).catch(
+        error => {
+            console.log('error with delete route', error);
+        }
+    )
+})
 // const resultsRouter = require('./routes/results.router.js');
 // app.use('/results', resultsRouter);
 

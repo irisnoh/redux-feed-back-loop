@@ -7,8 +7,6 @@ import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 
-
-
 class Supported extends Component {
 
 
@@ -19,10 +17,6 @@ class Supported extends Component {
         })
     }
 
-
-    setStore = (actionType) => {
-        this.props.dispatch({ type: actionType, payload: this.state.value });
-    }
     handleNextButton = () => {
         this.props.history.push('/Comments')
     }
@@ -34,7 +28,7 @@ class Supported extends Component {
                 <FormControl>
                     <InputLabel htmlFor="support">Support</InputLabel>
                     {/* drop down list in scale 1-5 */}
-                   
+
                     <Select
                         onChange={this.handleChangeFor('support')} >
                         <MenuItem ><em></em></MenuItem>
@@ -48,10 +42,10 @@ class Supported extends Component {
 
                 </FormControl>
                 <h1>Feedback:</h1>
-                <p key={this.props.formReducer.id}>Feelings: {this.props.formReducer.feeling} </p>
-                <p key={this.props.formReducer.id}>Understanding: {this.props.formReducer.understanding}</p>
-                <p key={this.props.formReducer.id}>Supported: {this.props.formReducer.support}</p>
-                <p key={this.props.formReducer.id}>Comments: {this.props.formReducer.comments}</p>
+                <p>Feelings: {this.props.formReducer.feeling} </p>
+                <p>Understanding: {this.props.formReducer.understanding}</p>
+                <p>Supported: {this.props.formReducer.support}</p>
+                <p>Comments: {this.props.formReducer.comments}</p>
 
                 {/* <pre>
                     {JSON.stringify(this.props.formReducer, null, 2)}

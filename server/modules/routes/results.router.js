@@ -26,19 +26,22 @@ app.post('/', (req, res) => {
              res.sendStatus(500)
          })
  })
- 
-//  app.get('/form', (req, res) => {
-//      console.log(req.body);
-//     let queryText = `SELECT * FROM "feedback" ORDER BY "id" DESC`;
- 
-//      pool.query(queryText)
-//          .then(result => {
-//              res.send(result.rows);
-//          }).catch(error => {
-//              console.log(error);
-//              res.sendStatus(500)
-//          })
-//  })
+
+ //delete route to delete one feedback
+app.delete('/:id', (req, res) => {
+    const idToDelete = req.params.id;
+    pool.query(`
+        DELETE FROM "feedback" WHERE "id"=$1
+    `, [idToDelete]).then(
+        () => {
+            res.sendStatus(200);
+        }
+    ).catch(
+        error => {
+            console.log('error with delete route', error);
+        }
+    )
+})
  
 //  app.delete("/form/:id",(req,res) => {
 //      let queryText = `DELETE FROM "feedback" WHERE id=$1`;

@@ -7,7 +7,7 @@ A full-stack feedback loop application. On a scale of 1-5, users can rate how th
 
 This project uses: React.js, React-Redux, Express.js/Node.js, postGresSQL and Material.UI. 
 
-Deployed project can be found: 
+Deployed project can be found: https://react-feedback-loop.herokuapp.com/#/
 
 # SQL - TO - DO - LIST
 ![Feedback-loop interface](Feedback.png)
