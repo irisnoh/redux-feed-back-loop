@@ -9,8 +9,7 @@ CREATE TABLE "feedback" (
   "understanding" INT not null,
   "support" INT not null,
   "comments" text,
-  "flagged" boolean default false,
-  "date" date not null 
+  "flagged" boolean default false);
   -- default 
   -- CURRENT_DATE
 
