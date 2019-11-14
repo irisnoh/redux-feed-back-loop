@@ -19,13 +19,6 @@ class ReviewFeedback extends Component {
         })
         this.props.history.push("/ThankYou");
     }
-
-    handleChangeFor = (propertyName) => (event) => {
-        this.props.dispatch({
-            type: 'CLEAR_FEEDBACK',
-            payload: { [propertyName]: event.target.value },
-        })
-    }
  
     render() {
         return (    
