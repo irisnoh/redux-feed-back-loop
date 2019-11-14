@@ -2,18 +2,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+import { Link } from 'react-router-dom';
 
 class ThankYou extends Component {
-    handleNextButton = () => {
-        this.props.history.push('/')
+   
+    handleChangeFor = (event) => {
+        this.props.dispatch({
+            type: 'CLEAR_FEEDBACK',
+            payload: event.target.value,
+        })
     }
-
     render() {
         return (
             <>
                 <h1>Feedback!</h1>
                 <h3>Thank You!</h3>
-                <HomeOutlinedIcon onClick={this.handleNextButton}>Home</HomeOutlinedIcon>
+              <Link to="/"><HomeOutlinedIcon onClick={this.handleChangeFor} color="action">Home</HomeOutlinedIcon></Link>
             </>
         );
     }

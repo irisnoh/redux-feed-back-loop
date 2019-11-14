@@ -19,6 +19,13 @@ class ReviewFeedback extends Component {
         })
         this.props.history.push("/ThankYou");
     }
+
+    handleChangeFor = (propertyName) => (event) => {
+        this.props.dispatch({
+            type: 'CLEAR_FEEDBACK',
+            payload: { [propertyName]: event.target.value },
+        })
+    }
  
     render() {
         return (    
@@ -26,7 +33,7 @@ class ReviewFeedback extends Component {
             <div className="reviewPage">
 
                 <h1>Review Your Feedback!</h1>
-                <div>
+                <div key={this.props.formReducer.id}>
                 <p>Feelings: {this.props.formReducer.feeling} </p>
                 <p>Understanding: {this.props.formReducer.understanding}</p>
                 <p>Supported: {this.props.formReducer.support}</p>

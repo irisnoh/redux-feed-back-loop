@@ -23,9 +23,9 @@ app.use(express.static('build'));
          })
  })
  app.post('/submit', (req, res) => {
-    let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments", "flagged") VALUES ($1, $2, $3, $4, $5)`;
- 
-     pool.query(queryText,[req.body.feeling,req.body.understanding,req.body.support,req.body.comments,false])
+     
+    let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments") VALUES ($1, $2, $3, $4)`;
+     pool.query(queryText,[req.body.feeling,req.body.understanding,req.body.support,req.body.comments])
          .then(result => {
              res.sendStatus(200);
          }).catch(error => {
