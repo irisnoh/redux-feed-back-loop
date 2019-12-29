@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-image: url('greenimage.png');
+  background-image: url('tree.png');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -8,11 +8,10 @@
   min-height: 100vh;
 }
 
+
 .App-header {
-  background-color: #5c8d89;
   min-height: 70px;
   padding: 20px;
-  color: white;
 }
 
 .App-title {

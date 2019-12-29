@@ -35,6 +35,7 @@ class Admin extends Component {
     render() {
         return (
             <>
+            <div className="admin-table">
             <h1 className="tableHeader">Feedback Table</h1>
                 <Table>
                     <TableHead>
@@ -65,6 +66,7 @@ class Admin extends Component {
                     </TableBody>
                 </Table>
                     <CreateIcon onClick={this.handleNextButton}>New FeedBack</CreateIcon>
+                    </div>
                 {/* <pre>
                     {JSON.stringify(this.props.adminReducer, null, 2)}
                 </pre> */}

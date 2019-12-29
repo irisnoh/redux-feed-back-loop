@@ -9,5 +9,5 @@ This project uses: React.js, React-Redux, Express.js/Node.js, postGresSQL and Ma
 
 Deployed project can be found: https://react-feedback-loop.herokuapp.com/#/
 
-# SQL - TO - DO - LIST
+# React-Feedback-Loop
 ![Feedback-loop interface](Feedback.png)
